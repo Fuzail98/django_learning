@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+{%block content%}
+<h3>{{ title|capfirst|upper }}</h3>
+<h1>Home page</h1>
+{{ request.user.is_authenticated }}
+<p>This is a template.</p>
+<p>block content</p>
+{{ my_html| safe }}
+<p>
+    {{my_text}} {{my_number}}</p>
+</p>
+<ul>
+    {% for my_sub_item in my_list %}
+        {% if my_sub_item == 456 %}
+            <li>{{ forloop.counter }} - {{my_sub_item|add:1}}</li>
+        {% elif my_sub_item == 'lkjh' %}
+            <li>This is a string</li>
+        {% else %}
+             <li>{{ forloop.counter }} - {{my_sub_item}}</li>
+        {% endif %}
+    {%endfor%}
+</ul>
+
+{%endblock%}

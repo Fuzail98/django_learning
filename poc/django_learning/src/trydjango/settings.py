@@ -62,7 +62,11 @@ ROOT_URLCONF = 'trydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # '/home/fuzail/Desktop/django/poc/django_learning/src/templates/',
+            # os.path.join(BASE_DIR, "templates"),
+            BASE_DIR / "templates/",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

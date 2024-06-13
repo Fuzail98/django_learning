@@ -17,6 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# from pages import views # using this would affect how we import views fro mother apps so do like this:
+from pages.views import home_view, contact_view
+from products.views import product_detail_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', views.home_view, name='home'),
+    path('', home_view, name='home'),
+    path('contact/', contact_view),
+    path('product/', product_detail_view)
 ]

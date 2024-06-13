@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+
+{% block content %}
+<h1>In App Template<h1>
+{% comment %} <h2>{{title}}</h2> {% endcomment %}
+<h2>{{ object.title }}</h2>
+{% if object.desciption != None and object.desciption != '' %} 
+    {{ object.desciption }} 
+{% else %} 
+    Description coming soon!!!
+{% endif %}
+
+{% endblock %}
